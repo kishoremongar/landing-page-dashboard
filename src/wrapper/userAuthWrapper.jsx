@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { addTokens, addUser, removeTokens } from '../store/slices/auth';
@@ -9,7 +9,7 @@ export default function UserAuthWrapper({ userData }) {
   const dispatch = useDispatch();
   const accessToken = useSelector((state) => state.auth.accessToken);
   const router = useRouter();
-
+  const pathName = usePathname();
   useEffect(() => {
     if (userData?.isAuthenticated && !accessToken) {
       dispatch(
@@ -19,6 +19,9 @@ export default function UserAuthWrapper({ userData }) {
         })
       );
       dispatch(addUser(userData));
+      if (pathName === '/') {
+        router.push('/dashboard');
+      }
     } else {
       dispatch(removeTokens());
       router.push('/auth/login');
