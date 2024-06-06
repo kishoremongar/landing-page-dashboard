@@ -1,6 +1,6 @@
-# Next App Setup
+# Project Highlights
 
-This setup is for Next 14 app router and uses pre-commit hook with the help of husky to run lint and test before committing. Also additionally commitlint is used to check commit message.
+This setup is for Next 14 app router and uses pre-commit hook with the help of husky to run lint and test before committing. Also additionally commitlint is used to check commit message. TailwindCss and react-chartjs-2 and chart.js to register is being used along with Redux toolkit. NextTopLoader is used for navigation progress.
 
 # Demo Login
 
