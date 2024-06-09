@@ -1,8 +1,13 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import AddIcon from '@@assets/icons/plusIcon.svg';
 import HomeIcon from '@@assets/icons/homeIcon.svg';
 
-export default function CreateLandingButton({ goToHome = false }) {
+export default function CreateLandingButton() {
+  const pathName = usePathname();
+  const goToHome = pathName.startsWith('/landing-page');
   return (
     <Link
       href={goToHome ? '/dashboard' : '/landing-page/create'}

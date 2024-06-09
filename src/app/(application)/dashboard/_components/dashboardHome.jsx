@@ -29,13 +29,13 @@ export default function DashboardHome() {
   }
   return (
     <div className='bg-gray-100 min-h-screen py-12 w-full'>
-      <div className='max-w-4xl mx-auto px-4'>
+      <div className='max-w-4xl mx-auto px-4 h-full'>
         <h1 className='text-2xl sm:text-3xl font-bold mb-6 text-primary'>
           Dashboard Home
         </h1>
-        <div className='bg-white shadow-md p-6 rounded-lg'>
+        <div className='bg-white shadow-md min-h-[80%] p-6 rounded-lg'>
           <h2 className='text-xl font-bold mb-4'>Existing Landing Pages</h2>
-          <ul>
+          <ul className='overflow-auto'>
             {landingPages?.length > 0 ? (
               landingPages?.map((page) => (
                 <li
